@@ -39,9 +39,9 @@ function setup() {
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
 
-	box1 = new Box(380,650,20,100);
-	box2= new Box (380,650,20,100);
-	box3= new Box(400,650,50,50);
+	box1 = new Box(510,620,20,100);
+	box2= new Box (290,620,20,100);
+	box3= new Box(400,650,200,20);
    
 	Engine.run(engine);
   
@@ -53,6 +53,9 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
+  box1.display();
+  box2.display();
+  box3.display();
   drawSprites();
  
 }
@@ -61,8 +64,7 @@ function keyPressed() {
  if (keyCode === DOWN_ARROW) {
 	Matter.Body.setStatic(packageBody , false);
 
-    // Look at the hints in the document and understand how to make the package body fall only on press of the Down arrow key.
-
+   
     
   }
 }
